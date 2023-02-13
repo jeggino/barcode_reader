@@ -4,6 +4,7 @@ import cv2
 from pyzbar.pyzbar import decode
 import numpy as np
 import pandas as pd
+from PIL import Image, ImageEnhance
 
 
 st.set_page_config(
@@ -16,9 +17,15 @@ st.set_page_config(
 # ---FUNCTION---
 # Make one method to decode the barcode
 def BarcodeReader(image):
+    
+    # adding some sharpness and contrast to the image 
+    enhancer1 = ImageEnhance.Sharpness(img)
+    enhancer2 = ImageEnhance.Contrast(img)
+    img_edit = enhancer1.enhance(20.0)
+    img_edit = enhancer2.enhance(1.5)
 
     # read the image in numpy array using cv2
-    bytes_data = image.getvalue()
+    bytes_data = img_edit.getvalue()
     cv2_img = cv2.imdecode(np.frombuffer(bytes_data, np.uint8), cv2.IMREAD_COLOR)
 
     # Decode the barcode image
