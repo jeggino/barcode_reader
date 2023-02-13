@@ -41,7 +41,9 @@ def BarcodeReader(image):
         return st.write("Barcode Not Detected or your barcode is blank/corrupted!")
         
     else:
-        return f"{detectedBarcodes.data}"
+        for barcode in detectedBarcodes:
+            
+            return f"{barcode.data}"
     
 
                 
