@@ -2,13 +2,16 @@
 import streamlit as st
 import cv2
 from pyzbar.pyzbar import decode
+import numpy as np
+
 
 # ---FUNCTION---
 # Make one method to decode the barcode
 def BarcodeReader(image):
 
     # read the image in numpy array using cv2
-    img = cv2.imread(image)
+#     img = cv2.imread(image)
+    img = np.array(image)
 
     # Decode the barcode image
     detectedBarcodes = decode(img)
