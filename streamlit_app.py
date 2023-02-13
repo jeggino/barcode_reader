@@ -19,8 +19,8 @@ st.set_page_config(
 def BarcodeReader(image):
     
     # adding some sharpness and contrast to the image 
-    enhancer1 = ImageEnhance.Sharpness(img)
-    enhancer2 = ImageEnhance.Contrast(img)
+    enhancer1 = ImageEnhance.Sharpness(image)
+    enhancer2 = ImageEnhance.Contrast(image)
     img_edit = enhancer1.enhance(20.0)
     img_edit = enhancer2.enhance(1.5)
 
