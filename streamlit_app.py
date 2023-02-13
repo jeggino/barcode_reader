@@ -58,7 +58,7 @@ picture = st.camera_input("Take a picture")
 
 if picture:
     df_dict = {"Kind":kind,"Title":title,"Genre":genre,"Barcode":BarcodeReader(picture)}
-    df = pd.Dataframe(df_dict)
+    df = pd.DataFrame(df_dict)
     st.dataframe(df)
     
    
