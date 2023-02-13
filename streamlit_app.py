@@ -6,7 +6,7 @@ import numpy as np
 
 
 st.set_page_config(
-    page_title="GiggiGIS",
+    page_title="Barcode_reader",
     page_icon="💀",
     layout="wide",
     
