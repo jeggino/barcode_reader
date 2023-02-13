@@ -23,7 +23,9 @@ def BarcodeReader(image):
     # adding some sharpness and contrast to the image 
     enhancer1 = ImageEnhance.Sharpness(img)
     enhancer2 = ImageEnhance.Contrast(img)
+    enhancer3 = ImageEnhance.Brightness(img)
     img_edit = enhancer1.enhance(30.0)
+    img_edit = enhancer2.enhance(3)
     img_edit = enhancer2.enhance(3)
 
     # read the image in numpy array using cv2
