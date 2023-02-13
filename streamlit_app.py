@@ -3,6 +3,7 @@ import streamlit as st
 import cv2
 from pyzbar.pyzbar import decode
 import numpy as np
+import pandas as pd
 
 
 st.set_page_config(
@@ -25,7 +26,7 @@ def BarcodeReader(image):
 
     # If not detected then print the message
     if not detectedBarcodes:
-        st.write("Barcode Not Detected or your barcode is blank/corrupted!")
+        return st.write("Barcode Not Detected or your barcode is blank/corrupted!")
         
     else:
     
@@ -44,10 +45,22 @@ def BarcodeReader(image):
             if barcode.data!="":
 
             # Print the barcode data
-                st.write(f"the bar code is {barcode.data}")
+#                 st.write(f"the bar code is {barcode.data}")
+                return barcode.data
 
 
+
+
+kind = st.radio('What kind of product',('Cd', 'Book'))
+title = st.text_input('Movie title', 'insert a title here ...')
+genre = st.multiselect("Genre?", ('Comedy', 'Drama', 'Documentary'))    
 picture = st.camera_input("Take a picture")
 
 if picture:
-    BarcodeReader(picture)
+    df_dict = {"Kind":kind,"Title":title,"Genre":genre,"Barcode":BarcodeReader(picture)}
+    df = pd.Dataframe(df_dict)
+    st.dataframe(df)
+    
+   
+    
+
