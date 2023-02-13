@@ -54,10 +54,11 @@ def BarcodeReader(image):
 kind = st.radio('What kind of product',('Cd', 'Book'))
 title = st.text_input('Movie title', 'insert a title here ...')
 genre = st.multiselect("Genre?", ('Comedy', 'Drama', 'Documentary'))    
+price = st.number_input('Price')
 picture = st.camera_input("Take a picture")
 
 if picture:
-    df_dict = {"Kind":kind,"Title":title,"Genre":genre,"Barcode":BarcodeReader(picture)}
+    df_dict = {"Kind":kind,"Title":title,"Genre":genre,"Price":price,"Barcode":BarcodeReader(picture)}
     df = pd.DataFrame(df_dict)
     st.dataframe(df)
     
