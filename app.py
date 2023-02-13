@@ -15,7 +15,6 @@ def BarcodeReader(image):
 
     # If not detected then print the message
     if not detectedBarcodes:
-#         print("Barcode Not Detected or your barcode is blank/corrupted!")
         st.write("Barcode Not Detected or your barcode is blank/corrupted!")
     else:
     
@@ -34,15 +33,7 @@ def BarcodeReader(image):
             if barcode.data!="":
 
             # Print the barcode data
-#                 print(barcode.data)
                 st.write(barcode.data)
-                
-#                 print(barcode.type)
-
-#     #Display the image
-#     cv2.imshow("Image", img)
-#     cv2.waitKey(0)
-#     cv2.destroyAllWindows()
 
 
 picture = st.camera_input("Take a picture")
