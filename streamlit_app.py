@@ -27,8 +27,8 @@ def BarcodeReader(image):
     img_edit = enhancer2.enhance(1.5)
 
     # read the image in numpy array using cv2
-    bytes_data = img_edit.getvalue()
-    cv2_img = cv2.imdecode(np.frombuffer(bytes_data, np.uint8), cv2.IMREAD_COLOR)
+#     bytes_data = img_edit.getvalue()
+    cv2_img = cv2.imdecode(np.frombuffer(img_edit, np.uint8), cv2.IMREAD_COLOR)
 
     # Decode the barcode image
     detectedBarcodes = decode(cv2_img)
