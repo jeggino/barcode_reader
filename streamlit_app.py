@@ -71,9 +71,9 @@ def read_barcodes(frame):
         
         #2
         font = cv2.FONT_HERSHEY_DUPLEX
-        
         cv2.putText(frame, barcode_info, (x + 6, y - 6), font, 2.0, (255, 255, 255), 1)
-        
+        #3
+       
     return frame
 
 def main():
@@ -107,7 +107,8 @@ picture = st.camera_input("Take a picture")
 #     st.dataframe(df)
     
 if st.button('Say hello'):
-    main()
+    if __name__ == '__main__':
+        main()
     
     
     
