@@ -26,7 +26,7 @@ def BarcodeReader(image):
     enhancer3 = ImageEnhance.Brightness(img)
     img_edit = enhancer1.enhance(30.0)
     img_edit = enhancer2.enhance(3)
-    img_edit = enhancer2.enhance(2)
+    img_edit = enhancer3.enhance(2)
 
     # read the image in numpy array using cv2
 #     bytes_data = img_edit.getvalue()
