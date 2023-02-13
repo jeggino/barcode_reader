@@ -46,7 +46,7 @@ def BarcodeReader(image):
 
             # Print the barcode data
 #                 st.write(f"the bar code is {barcode.data}")
-                return barcode.data
+                return f"{barcode.data}"
 
 
 
