@@ -2,6 +2,8 @@
 import streamlit as st
 import cv2
 from pyzbar.pyzbar import decode
+import numpy as np
+
 
 st.set_page_config(
     page_title="GiggiGIS",
