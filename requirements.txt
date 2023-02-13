@@ -2,3 +2,4 @@ pyzbar
 streamlit
 opencv-python
 pandas
+requests
