@@ -4,6 +4,12 @@ import cv2
 from pyzbar.pyzbar import decode
 import numpy as np
 
+st.set_page_config(
+    page_title="GiggiGIS",
+    page_icon="💀",
+    layout="wide",
+    
+)
 
 # ---FUNCTION---
 # Make one method to decode the barcode
