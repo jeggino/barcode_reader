@@ -10,8 +10,6 @@ import numpy as np
 def BarcodeReader(image):
 
     # read the image in numpy array using cv2
-#     img = cv2.imread(image)
-#     img = np.array(image)
     bytes_data = image.getvalue()
     cv2_img = cv2.imdecode(np.frombuffer(bytes_data, np.uint8), cv2.IMREAD_COLOR)
 
@@ -38,7 +36,7 @@ def BarcodeReader(image):
             if barcode.data!="":
 
             # Print the barcode data
-                st.write(barcode.data)
+                st.write(f"the bar code is {barcode.data}")
 
 
 picture = st.camera_input("Take a picture")
