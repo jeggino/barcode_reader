@@ -1,6 +1,8 @@
 # Importing library
 import streamlit as st
-import cv2
+# import cv2
+import tensorflow as tf
+
 from pyzbar.pyzbar import decode
 import numpy as np
 
@@ -17,7 +19,8 @@ def BarcodeReader(image):
 
     # read the image in numpy array using cv2
     bytes_data = image.getvalue()
-    cv2_img = cv2.imdecode(np.frombuffer(bytes_data, np.uint8), cv2.IMREAD_COLOR)
+#     cv2_img = cv2.imdecode(np.frombuffer(bytes_data, np.uint8), cv2.IMREAD_COLOR)
+    cv2_img = tf.io.decode_image(bytes_data, channels=3)
 
     # Decode the barcode image
     detectedBarcodes = decode(cv2_img)
