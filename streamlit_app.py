@@ -18,9 +18,11 @@ st.set_page_config(
 # Make one method to decode the barcode
 def BarcodeReader(image):
     
+    img = Image.open(image)
+    
     # adding some sharpness and contrast to the image 
-    enhancer1 = ImageEnhance.Sharpness(image)
-    enhancer2 = ImageEnhance.Contrast(image)
+    enhancer1 = ImageEnhance.Sharpness(img)
+    enhancer2 = ImageEnhance.Contrast(img)
     img_edit = enhancer1.enhance(20.0)
     img_edit = enhancer2.enhance(1.5)
 
