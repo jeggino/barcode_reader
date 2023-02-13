@@ -61,7 +61,7 @@ picture = st.camera_input("Take a picture")
 if picture:
     df_dict = {"Kind":kind,"Title":title,"Genre":genre,"Price":price,"Barcode":BarcodeReader(picture)}
     df = pd.DataFrame(df_dict)
-    st.dataframe(df)
+    st.dataframe(df,use_container_width=True)
     
 
     
